@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Layout from "../components/Layout/index"
 import BasicHeader from "../components/BasicHeader"
 import WidthSetter from "../components/WidthSetter"
@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   `}
 `
 
-const FormContainer = styled.form`
+const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,6 +79,10 @@ const Button = styled.button`
   }
 `
 
+const ThankyouWrapper = styled.div`
+  padding: 80px 0;
+`
+
 const ThankyouHeader = styled.h3`
   font-size: 30px;
   color: #474676;
@@ -95,10 +99,15 @@ const ThankyouMessage = styled.p`
   color: #474676;
   margin-bottom: 20px;
   line-height: 1.5;
+  text-align: left;
+
+  ${screenSize.minDesktop`
+    text-align: center;
+  `}
 `
 
 const ContactPage = () => {
-  const [submissionSuccess, setSubmissionSuccess] = React.useState(false)
+  const [submissionSuccess, setSubmissionSuccess] = useState(false)
 
   const handleSubmitForm = e => {
     e.preventDefault()
@@ -109,7 +118,7 @@ const ContactPage = () => {
     const containsBadWords = badWords.some(word => message.includes(word))
     if (containsBadWords) return
 
-    const formString = `email: ${e?.target?.email?.value} \n name: ${e?.target?.name?.value} \n message: ${e?.target?.message?.value}`
+    const formString = `----------------- \n email: ${e?.target?.email?.value} \n name: ${e?.target?.name?.value} \n message: ${e?.target?.message?.value} \n -----------------`
 
     const messageObject = {
       content: formString,
@@ -125,7 +134,8 @@ const ContactPage = () => {
         body: JSON.stringify(messageObject),
       }
     )
-      .then(res => {
+      .then(() => {
+        console.log("????")
         setSubmissionSuccess(true)
       })
       .catch(err => {
@@ -140,12 +150,12 @@ const ContactPage = () => {
         <Wrapper>
           <FormContainer>
             {submissionSuccess ? (
-              <>
+              <ThankyouWrapper>
                 <ThankyouHeader>Thank you for your message!</ThankyouHeader>
                 <ThankyouMessage>
                   We will get back to you as soon as possible.
                 </ThankyouMessage>
-              </>
+              </ThankyouWrapper>
             ) : (
               <Form onSubmit={handleSubmitForm}>
                 <Input type="hidden" name="form-name" value="contact" />

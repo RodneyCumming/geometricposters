@@ -123,7 +123,7 @@ const ProductPage = props => {
   const handleSubmitForm = e => {
     e.preventDefault()
 
-    const formString = `email: ${e?.target?.email?.value} \n name: ${e?.target?.name?.value} \n address: ${e?.target?.address?.value} \n product name: ${productData.name} \n price: ${productData.price} \n size: ${productData.size} \n quantity: 1`
+    const formString = `----------------- \n email: ${e?.target?.email?.value} \n name: ${e?.target?.name?.value} \n address: ${e?.target?.address?.value} \n product name: ${productData.name} \n price: ${productData.price} \n size: ${productData.size} \n quantity: 1 \n -----------------`
 
     const messageObject = {
       content: formString,
