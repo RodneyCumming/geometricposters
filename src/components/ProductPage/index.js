@@ -44,6 +44,11 @@ const ProductName = styled.h3`
   font-size: 30px;
   color: #474676;
   margin-bottom: 20px;
+  text-align: left;
+
+  ${screenSize.minDesktop`
+    text-align: center;
+  `}
 `
 
 const ProductDescription = styled.p`
@@ -108,10 +113,39 @@ const FormLabel = styled.label`
 
 const StyledImage = styled(Img)``
 
+// webhook url - https://discord.com/api/webhooks/992729892573691954/PEe5gAiRUWMd2n8vgh0UqxvZKC8DuVREhjG-Q43K3FB6o8mZHQkudwygm5k7buiNaMMv
+
 const ProductPage = props => {
   const { productData } = props.pageContext
 
   const [progress, setProgress] = useState(0)
+
+  const handleSubmitForm = e => {
+    e.preventDefault()
+
+    const formString = `email: ${e?.target?.email?.value} \n name: ${e?.target?.name?.value} \n address: ${e?.target?.address?.value} \n product name: ${productData.name} \n price: ${productData.price} \n size: ${productData.size} \n quantity: 1`
+
+    const messageObject = {
+      content: formString,
+    }
+
+    fetch(
+      "https://discord.com/api/webhooks/992729892573691954/PEe5gAiRUWMd2n8vgh0UqxvZKC8DuVREhjG-Q43K3FB6o8mZHQkudwygm5k7buiNaMMv",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(messageObject),
+      }
+    )
+      .then(res => {
+        setProgress(2)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
 
   return (
     <Layout>
@@ -163,10 +197,9 @@ const ProductPage = props => {
 
                     <Form
                       name="product-purchase-form"
-                      method="POST"
-                      data-netlify="true"
-                      data-netlify-honeypot="bot-field"
-                      action={`?success=true`}
+                      onSubmit={e => {
+                        handleSubmitForm(e)
+                      }}
                     >
                       <Input type="hidden" name="form-name" value="contact" />
                       <FormLabel>

@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   `}
 `
 
-const Form = styled.form`
+const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,6 +27,8 @@ const Form = styled.form`
     padding: 80px;
   `}
 `
+
+const Form = styled.form``
 
 const Input = styled.input`
   width: 100%;
@@ -77,44 +79,102 @@ const Button = styled.button`
   }
 `
 
+const ThankyouHeader = styled.h3`
+  font-size: 30px;
+  color: #474676;
+  margin-bottom: 20px;
+  text-align: left;
+
+  ${screenSize.minDesktop`
+    text-align: center;
+  `}
+`
+
+const ThankyouMessage = styled.p`
+  font-size: 20px;
+  color: #474676;
+  margin-bottom: 20px;
+  line-height: 1.5;
+`
+
 const ContactPage = () => {
+  const [submissionSuccess, setSubmissionSuccess] = React.useState(false)
+
+  const handleSubmitForm = e => {
+    e.preventDefault()
+
+    // if message contains bad words or spam, don't send email
+    const message = e?.target?.message?.value
+    const badWords = ["porn", "sex", "xxx"]
+    const containsBadWords = badWords.some(word => message.includes(word))
+    if (containsBadWords) return
+
+    const formString = `email: ${e?.target?.email?.value} \n name: ${e?.target?.name?.value} \n message: ${e?.target?.message?.value}`
+
+    const messageObject = {
+      content: formString,
+    }
+
+    fetch(
+      "https://discord.com/api/webhooks/992729892573691954/PEe5gAiRUWMd2n8vgh0UqxvZKC8DuVREhjG-Q43K3FB6o8mZHQkudwygm5k7buiNaMMv",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(messageObject),
+      }
+    )
+      .then(res => {
+        setSubmissionSuccess(true)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
   return (
     <Layout>
       <BasicHeader header={"CONTACT US"} />
       <WidthSetter>
         <Wrapper>
-          <Form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            action="/contact?success=true"
-          >
-            <Input type="hidden" name="form-name" value="contact" />
-            <Label>
-              Name:
-              <Input
-                type="text"
-                name="name"
-                required="required"
-                minLength="2"
-              />
-            </Label>
-            <Label>
-              Email:
-              <Input
-                type="email"
-                name="email"
-                required="required"
-                minLength="2"
-              />
-            </Label>
-            <Label>
-              Message:
-              <TextArea name="message" required="required" minLength="2" />
-            </Label>
-            <Button type="submit">Send</Button>
-          </Form>
+          <FormContainer>
+            {submissionSuccess ? (
+              <>
+                <ThankyouHeader>Thank you for your message!</ThankyouHeader>
+                <ThankyouMessage>
+                  We will get back to you as soon as possible.
+                </ThankyouMessage>
+              </>
+            ) : (
+              <Form onSubmit={handleSubmitForm}>
+                <Input type="hidden" name="form-name" value="contact" />
+                <Label>
+                  Name:
+                  <Input
+                    type="text"
+                    name="name"
+                    required="required"
+                    minLength="2"
+                  />
+                </Label>
+                <Label>
+                  Email:
+                  <Input
+                    type="email"
+                    name="email"
+                    required="required"
+                    minLength="2"
+                  />
+                </Label>
+                <Label>
+                  Message:
+                  <TextArea name="message" required="required" minLength="2" />
+                </Label>
+                <Button type="submit">Send</Button>
+              </Form>
+            )}
+          </FormContainer>
         </Wrapper>
       </WidthSetter>
     </Layout>
