@@ -88,10 +88,11 @@ const ContactPage = () => {
             method="POST"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
+            action="/contact/success=true"
           >
             <Input type="hidden" name="form-name" value="contact" />
             <Label>
-              Name:{" "}
+              Name:
               <Input
                 type="text"
                 name="name"
@@ -100,7 +101,7 @@ const ContactPage = () => {
               />
             </Label>
             <Label>
-              Email:{" "}
+              Email:
               <Input
                 type="email"
                 name="email"
@@ -109,7 +110,7 @@ const ContactPage = () => {
               />
             </Label>
             <Label>
-              Message:{" "}
+              Message:
               <TextArea name="message" required="required" minLength="2" />
             </Label>
             <Button type="submit">Send</Button>

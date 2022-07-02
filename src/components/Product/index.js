@@ -7,7 +7,6 @@ const Product = props => {
   const { product } = props
   return (
     <Styled.Product onClick={() => navigate(product.slug)}>
-      {/* <div >{props.product.name}</div> */}
       <Styled.WallShadow />
       <Styled.Shadow src={shadowPng} />
       {product.image.childImageSharp && (

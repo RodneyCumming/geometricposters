@@ -114,22 +114,48 @@ const ProductPage = props => {
   const [progress, setProgress] = useState(0)
 
   const handleSubmitForm = e => {
-    setProgress(2)
-
     // post to netlify form
-    const formData = new FormData()
-    formData.append("form-name", "purchase-form")
-    formData.append("email", e?.target?.email?.value)
-    formData.append("product", productData.title)
-    formData.append("price", productData.price)
-    formData.append("quantity", 1)
-    formData.append("name", e?.target?.name?.value)
-    formData.append("address", e?.target?.address?.value)
+    // const formData = new FormData()
+    // formData.append("form-name", "purchase-form")
+    // formData.append("email", e?.target?.email?.value)
+    // formData.append("product", productData.title)
+    // formData.append("price", productData.price)
+    // formData.append("quantity", 1)
+    // formData.append("name", e?.target?.name?.value)
+    // formData.append("address", e?.target?.address?.value)
+
+    // fetch("/", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //   body: new URLSearchParams(formData).toString(),
+    // })
+    //   .then(() => console.log("Form successfully submitted"))
+    //   .catch(error => alert(error))
+
+    //   function encode(data) {
+    //     return Object.keys(data)
+    //       .map(
+    //         (key) =>
+    //           encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+    //       )
+    //       .join("&");
+    //   }
 
     fetch("/", {
       method: "POST",
-      body: formData,
-    }).catch(error => console.error(error))
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": "product-purchase-form",
+        name: e?.target?.name?.value,
+        email: e?.target?.email?.value,
+        product: productData.title,
+        price: productData.price,
+        quantity: 1,
+        address: e?.target?.address?.value,
+      }),
+    })
+      .then(() => setProgress(2))
+      .catch(error => alert(error))
   }
 
   return (
