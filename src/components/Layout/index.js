@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet"
 
 const SeoComponent = () => {
   // get url
-  const url = window.location.href
+  const url = typeof window !== "undefined" ? window.location.href : ""
   // generate page title from url
   let pageTitle = url.split("/").pop()
   if (pageTitle === "") {
