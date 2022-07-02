@@ -116,7 +116,7 @@ const ContactPage = () => {
     }
 
     fetch(
-      "https://discord.com/api/webhooks/992729892573691954/PEe5gAiRUWMd2n8vgh0UqxvZKC8DuVREhjG-Q43K3FB6o8mZHQkudwygm5k7buiNaMMv",
+      "https://discord.com/api/webhooks/992746417485520918/Fski_wXJcOZ2jZ_bw3I_xgsKk1G2QjkDzw1dX50xpnXRUmKkzKThQZ2UXcBq8ReOqMjE",
       {
         method: "POST",
         headers: {
