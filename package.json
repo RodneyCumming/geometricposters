@@ -5,7 +5,9 @@
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
+    "dev": "gatsby develop",
     "build": "gatsby build",
+    "berve": "npm run build && npm run serve",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
@@ -14,18 +16,34 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "gatsby": "^2.24.50",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "@fontsource/montserrat": "^4.5.0",
+    "gatsby": "^4.11.2",
+    "gatsby-image": "*",
+    "gatsby-plugin-manifest": "*",
+    "gatsby-plugin-react-helmet": "*",
+    "gatsby-plugin-sharp": "*",
+    "gatsby-plugin-styled-components": "^5.11.0",
+    "gatsby-source-filesystem": "*",
+    "gatsby-source-storyblok": "*",
+    "gatsby-transformer-json": "*",
+    "gatsby-transformer-sharp": "*",
+    "normalize.css": "^8.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-use-cart": "^1.11.2",
+    "styled-components": "^5.3.0"
   },
   "devDependencies": {
-    "prettier": "2.1.0"
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.18.3",
+    "husky": "^4.2.3",
+    "prettier": "2.1.0",
+    "pretty-quick": "^2.0.1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }

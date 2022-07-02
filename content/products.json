@@ -1,0 +1,14 @@
+{
+  "products": [
+    {
+      "name": "Framed poster raw root",
+      "description": "Make a statement in any room with this framed poster, printed on thick, durable, matte paper. The matte black frame adds an extra touch of class.",
+      "price": 20,
+      "size": "69cm x 49cm",
+      "image": [
+        "https://cdn.shopify.com/s/files/1/0124/2018/6171/products/mockup-86ce8af3_1024x1024@2x.jpg?v=1573466163",
+        "https://cdn.shopify.com/s/files/1/0124/2018/6171/products/Printful_eagl_mockup_Person_Person_16x20_6396bbe5-bc26-45aa-92c0-bae2cbedaa62_1024x1024@2x.png?v=1573466163"
+      ]
+    }
+  ]
+}

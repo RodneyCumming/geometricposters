@@ -1,0 +1,113 @@
+{
+  "products": [
+    {
+      "name": "Poster one",
+      "slug": "poster-one",
+      "description": "Museum-quality posters made on thick and durable matte paper. Each poster is giclée-printed on archival, acid-free paper that yields brilliant prints to brighten up any room.",
+      "price": 40,
+      "size": "12 × 16 inches",
+      "adsf": "images/1.jpeg",
+      "image": "images/1.jpeg",
+      "stripeUrl": "https://buy.stripe.com/dR628e1mJcskfvidQR"
+    },
+    {
+      "name": "Poster 2",
+      "slug": "poster-2",
+      "description": "Museum-quality posters made on thick and durable matte paper. Each poster is giclée-printed on archival, acid-free paper that yields brilliant prints to brighten up any room.",
+      "price": 35,
+      "size": "12 × 16 inches",
+      "image": "images/2.jpeg",
+      "stripeUrl": "https://buy.stripe.com/00g0062qN780cj6eUW"
+    },
+    {
+      "name": "Poster 3",
+      "slug": "poster-3",
+      "description": "Museum-quality posters made on thick and durable matte paper. Each poster is giclée-printed on archival, acid-free paper that yields brilliant prints to brighten up any room.",
+      "price": 50,
+      "size": "12 × 16 inches",
+      "image": "images/3.jpeg",
+      "stripeUrl": "https://buy.stripe.com/00g3cifdzakc0AodQT"
+    },
+    {
+      "name": "Poster 4",
+      "slug": "poster-4",
+      "description": "Museum-quality posters made on thick and durable matte paper. Each poster is giclée-printed on archival, acid-free paper that yields brilliant prints to brighten up any room.",
+      "price": 40,
+      "size": "12 × 16 inches",
+      "image": "images/4.jpeg",
+      "stripeUrl": "https://buy.stripe.com/4gwaEK1mJgIA2Iw3cg"
+    },
+    {
+      "name": "Poster 5",
+      "slug": "poster-5",
+      "description": "Museum-quality posters made on thick and durable matte paper. Each poster is giclée-printed on archival, acid-free paper that yields brilliant prints to brighten up any room.",
+      "price": 35,
+      "size": "12 × 16 inches",
+      "image": "images/5.jpeg",
+      "stripeUrl": "https://buy.stripe.com/8wM6oufdz3VOcj6005"
+    },
+    {
+      "name": "Poster 6",
+      "slug": "poster-6",
+      "description": "Museum-quality posters made on thick and durable matte paper. Each poster is giclée-printed on archival, acid-free paper that yields brilliant prints to brighten up any room.",
+      "price": 40,
+      "size": "12 × 16 inches",
+      "image": "images/6.jpeg",
+      "stripeUrl": "https://buy.stripe.com/28o3cighDgIA5UI5kq"
+    },
+    {
+      "name": "Poster 7",
+      "slug": "poster-7",
+      "description": "Museum-quality posters made on thick and durable matte paper. Each poster is giclée-printed on archival, acid-free paper that yields brilliant prints to brighten up any room.",
+      "price": 50,
+      "size": "12 × 16 inches",
+      "image": "images/7.jpeg",
+      "stripeUrl": "https://buy.stripe.com/4gw9AGaXjfEw0Ao7sz"
+    },
+    {
+      "name": "Poster 8",
+      "slug": "poster-8",
+      "description": "Museum-quality posters made on thick and durable matte paper. Each poster is giclée-printed on archival, acid-free paper that yields brilliant prints to brighten up any room.",
+      "price": 35,
+      "size": "12 × 16 inches",
+      "image": "images/8.jpeg",
+      "stripeUrl": "https://buy.stripe.com/28o6ou7L7eAsbf24go"
+    },
+    {
+      "name": "Poster 9",
+      "slug": "poster-9",
+      "description": "Museum-quality posters made on thick and durable matte paper. Each poster is giclée-printed on archival, acid-free paper that yields brilliant prints to brighten up any room.",
+      "price": 40,
+      "size": "12 × 16 inches",
+      "image": "images/9.jpeg",
+      "stripeUrl": "https://buy.stripe.com/00gbIOe9v7805UIcMV"
+    },
+    {
+      "name": "Poster 10",
+      "slug": "poster-10",
+      "description": "Museum-quality posters made on thick and durable matte paper. Each poster is giclée-printed on archival, acid-free paper that yields brilliant prints to brighten up any room.",
+      "price": 50,
+      "size": "12 × 16 inches",
+      "image": "images/10.jpeg",
+      "stripeUrl": "https://buy.stripe.com/6oE7syaXj4ZS5UIeV4"
+    },
+    {
+      "name": "Poster 11",
+      "slug": "poster-11",
+      "description": "Museum-quality posters made on thick and durable matte paper. Each poster is giclée-printed on archival, acid-free paper that yields brilliant prints to brighten up any room.",
+      "price": 40,
+      "size": "12 × 16 inches",
+      "image": "images/11.jpeg",
+      "stripeUrl": "https://buy.stripe.com/8wMaEK3uRcsk3MAaEP"
+    },
+    {
+      "name": "Poster 12",
+      "slug": "poster-12",
+      "description": "Museum-quality posters made on thick and durable matte paper. Each poster is giclée-printed on archival, acid-free paper that yields brilliant prints to brighten up any room.",
+      "price": 35,
+      "size": "12 × 16 inches",
+      "image": "images/12.jpeg",
+      "stripeUrl": "https://buy.stripe.com/8wM0065CZ4ZS3MA6oA"
+    }
+  ]
+}
