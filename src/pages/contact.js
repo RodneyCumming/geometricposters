@@ -124,16 +124,13 @@ const ContactPage = () => {
       content: formString,
     }
 
-    fetch(
-      "https://discord.com/api/webhooks/992746417485520918/Fski_wXJcOZ2jZ_bw3I_xgsKk1G2QjkDzw1dX50xpnXRUmKkzKThQZ2UXcBq8ReOqMjE",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(messageObject),
-      }
-    )
+    fetch(process.env.GATSBY_CONTACT_FORM_WEBHOOK, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(messageObject),
+    })
       .then(() => {
         console.log("????")
         setSubmissionSuccess(true)

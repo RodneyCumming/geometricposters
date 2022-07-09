@@ -129,16 +129,13 @@ const ProductPage = props => {
       content: formString,
     }
 
-    fetch(
-      "https://discord.com/api/webhooks/992729892573691954/PEe5gAiRUWMd2n8vgh0UqxvZKC8DuVREhjG-Q43K3FB6o8mZHQkudwygm5k7buiNaMMv",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(messageObject),
-      }
-    )
+    fetch(process.env.GATBY_PURCHASE_FORM_WEBHOOK, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(messageObject),
+    })
       .then(res => {
         setProgress(2)
       })
