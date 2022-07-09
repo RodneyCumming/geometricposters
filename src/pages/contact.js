@@ -53,7 +53,7 @@ const TextArea = styled.textarea`
   height: 100px;
   border-radius: 3px;
   border: none;
-  padding: 0 10px;
+  padding: 10px;
   margin: 10px 0 20px;
   background: #fdfdfd;
   resize: vertical;
